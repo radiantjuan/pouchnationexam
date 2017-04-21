@@ -11,7 +11,6 @@ please use this configuration for the vhost:
 
 ```vhost
     <VirtualHost *:80>
-		ServerAdmin admin@tomatocake.com
 		DocumentRoot "/path/to/your/app"
 		ServerName $DOMAIN_NAME
 		ServerAlias $DOMAIN_NAME
