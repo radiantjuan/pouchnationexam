@@ -1,73 +1,55 @@
 (function(){
 	"use strict";
 
-    var app = angular.module('twitterapp');
+    var app = angular.module('clothesbuffermanila');
 
     app.controller('DefaultController', [
         '$scope',
         '$http',
-        '$filter',
-        function($scope,$http,$filter){
-        	$('#myModal').modal({backdrop: 'static', keyboard: false});
-        	var hours = [];
-        	var created_hour = [];
+        '$sce',
+        'ezfb',
+        function($scope,$http,$sce,ezfb){
 
-        	$scope.gettweets = function(){
-        		$('.btn-primary').hide();
-        		$('.loading-container').show();
-        		$http({
-			        method : "GET",
-			        url : "http://codedemo.rcjworks.com/twitterapi/twitter/viewtweets/"+$scope.screenname+".json"
-			    }).then(
-				    function mySucces(response) {
-				    	$scope.userprofpic = response.data[0].Tweets.profile_image
-				    	$scope.screennameurl = 'https://twitter.com/'+response.data[0].Tweets.screen_name;
-				    	$scope.totaltweet = 0;
-				    	console.log(response);
-				    	for(var i = 0; i < response.data.length; i++){
-				    		hours.push(parseInt(response.data[i][0].tweetcount));
-				    		created_hour.push(response.data[i].Tweets.created_hour+":00");
-				    		$scope.totaltweet += parseInt(response.data[i][0].tweetcount);
-				    	}
-				    	$('.loading-container').hide();
-				    	$('.btn-primary').show();
-				    	$('#myModal').modal('hide');
-				    }, 
-				    function myError(response) {
-				        console.log(response);
-				    }
-			    );
-        	};
+            $scope.fbshare = function(){
+                ezfb.ui({
+                    method: 'share',
+                    display: 'popup',
+                    href: 'http://clothesbuffetmanila.com/',
+                  }, function(response){});
+            };
 
-			$scope.labels = created_hour;
-			$scope.series = ['Tweets'];
-			$scope.data = [
-				hours
-			];
+            $http({
+                method: 'GET',
+                url: 'https://api.myjson.com/bins/mggst'
+            })
+            .then(function successCallback(response) {
+                var result = response.data.event;
+                    console.log(result);
 
-			$scope.onClick = function (points, evt) {
-				console.log(points, evt);
-			};
+                    var details = result.details;
+                    $scope.bannerimg = result.banner;
+                    $scope.details = details;
+                    $scope.fblink = result.fb;
+                    $scope.organizer = result.organizer;
+                    $scope.posterimg = result.poster; /*WRONG IMAGE*/
+                    $scope.twitter = result.twitter;
+                    $scope.website = result.website;
+                    $scope.tickets = result.ticket_types;
 
-			$scope.datasetOverride = [{ yAxisID: 'y-axis-1' }];
-			$scope.options = {
-				scales: {
-					yAxes: [
-						{
-						  id: 'y-axis-1',
-						  type: 'linear',
-						  scaleLabel: {display:true,labelString:"Number of tweets",fontSize: 20},
-						  display: true,
-						  position: 'left',
-						  tick: { fixedStepSize:2 }
-						},
-					]
-				}
-			};
+                    $scope.short_desc = function() {
+                        return $sce.trustAsHtml(details.short_description);
+                    };
 
-			$scope.showmodal = function(){
-				$('#myModal').modal('show');
-			}
+                    $scope.long_desc = function() {
+                        return $sce.trustAsHtml(details.long_description);
+                    };
+
+                    console.log($scope.short_desc());
+
+                }, function errorCallback(response) {
+                    console.log(response);
+                });
+            
         }
     ]);
     

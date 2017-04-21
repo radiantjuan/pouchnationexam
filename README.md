@@ -1,9 +1,31 @@
 # twitterhistogramapp
 
 Author: Radiant C. Juan
-Purpose: EastVantage Exam
+Purpose: PouchNation
 
-This app uses REST API made in CakePHP, inside the API uses the twitter API for getting the user's latest 500 tweets and plot it in to a histogram to see how often the user tweets within 24/7.
+this app is built using gulp.
 
-feel free to see sample link for the API:
-http://codedemo.rcjworks.com/twitterapi/twitter/viewtweets/radiantcjuan.json
+Preferred to be uploaded in a apache server with virtual host instead of using browserSync and rewrite in node module
+
+please use this configuration for the vhost:
+
+    Markup :  `code()`
+
+```vhost
+    <VirtualHost *:80>
+		ServerAdmin admin@tomatocake.com
+		DocumentRoot "/var/www/html/clothesbuffetmanila/app"
+		ServerName clothesbuffetmanila.dev
+		ServerAlias clothesbuffetmanila.dev
+		ErrorLog "/var/log/apache2/clothesbuffetmanila.dev-error.log"
+		CustomLog "/var/log/apache2/clothesbuffetmanila.dev-access.log" common
+
+		SetEnv APP_ENV default
+		<Directory "/var/www/html/clothesbuffetmanila/app">
+		    AllowOverride All
+		    Require all granted
+		</Directory>
+	</VirtualHost>
+```
+
+    Markup : ```vhost

@@ -1,0 +1,385 @@
+header{
+	div{
+		@media (max-width:$screen-xs){
+    		background-size:480px;
+	    }
+		background-repeat: no-repeat;
+		background-attachment:fixed;
+		background-size:cover;
+	    position: relative;
+
+	    .overlay-black{
+    	    background-color: rgba(0,0,0,0.65);
+		    width: 100%;
+		    position: absolute;
+		    height: 100%;
+		    z-index:1;
+	    }
+
+		h1{
+			text-align: center;
+		    font-family: $font-base;
+		    font-weight: 300;
+	    	font-size: 65px;
+		    color: #fff;
+		    position:relative;
+		    width: 50%;
+		    margin: 0px auto;
+		    padding-top: 155px;
+		    padding-bottom: 155px;
+		    z-index:2;
+		    @media (max-width:$screen-sm){
+			    font-size: 35px;
+			    width: 100%;
+			    padding-top: 120px;
+			    padding-bottom: 120px;
+		    }
+		}
+
+
+		.date{
+		    @media (max-width:$screen-sm){
+		    	padding:0px;
+		    }
+		    max-width: 1200px;
+		    z-index: 3;
+		    .date-inner{
+		    	@media (max-width:$screen-sm){
+			    	border-radius: 0px;
+			    	font-size: 23px;
+			    	margin:-1px;
+			    	text-align: left;
+			    	padding-left: 30px;
+			    	padding-bottom: 30px;
+			    }
+	    	    background-color: #fff;
+				border-radius: 6px 6px 0px 0px;
+				font-size: 28px;
+				font-weight: bold;
+				font-family: $font-base;
+				text-align: center;
+				color: #000;
+				padding-top:15px;
+				padding-bottom:15px;
+		    }
+		}
+	}
+}
+
+/* INFO CONTAINER */
+.info-container{
+    @media (max-width:$screen-sm){
+    	display:none;
+    }
+	padding-bottom:50px;
+	.container-fluid{
+		max-width:1200px;
+		font-size: 16px;
+		/* LOCATION AND MAP */
+		.location{
+			.col-md-6{
+				padding-left:8px !important;
+				padding-right:8px !important;
+				.angular-google-map-container { 
+					height: 200px !important; 
+				}
+
+				h4{
+					font-family: $font-base;
+					font-weight: bold;
+				}
+			}
+		}
+		/* LOCATION AND MAP */
+		.company-desc{
+			padding-top:30px;
+		}
+	}
+}
+/* INFO CONTAINER */
+
+/* INFO CONTAINER */
+.info-mobile-container{
+	display:none;
+    @media (max-width:$screen-sm){
+    	display:block;
+    	div{
+    		padding:0px;
+    	}
+    }
+	padding-bottom:50px;
+	.container-fluid{
+		max-width:1200px;
+		font-size: 16px;
+		/* LOCATION AND MAP */
+		.location{
+			.col-md-6{
+			    @media (max-width:$screen-sm){
+			    	padding:0px !important;
+			    }
+
+		    	&.location-desc{
+		    		padding: 0px 30px 0px 30px !important;
+		    	}
+				padding-left:8px !important;
+				padding-right:8px !important;
+				.angular-google-map-container { 
+					height: 200px !important; 
+				}
+
+				h4{
+					font-family: $font-base;
+					font-weight: bold;
+				}
+			}
+		}
+		/* LOCATION AND MAP */
+		.company-desc{
+			@media (max-width:$screen-sm){
+		    	padding:30px 30px 0px 30px !important;
+		    }
+			padding-top:30px;
+		}
+	}
+}
+/* INFO CONTAINER */
+
+/* BUY TICKETS */
+.buy-tickets{
+	@media(max-width:$screen-sm){
+	    padding-top: 25px;
+	    padding-bottom: 25px;
+	}
+
+	background: #dd4f4e;
+    border-top: 6px solid #f4b2b3;
+    border-bottom: 6px solid #f4b2b3;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    div.container-fluid{
+	    max-width:1200px;
+	    text-align: center;
+	    h1{
+			color:#fff;
+			font-family: $font-base;
+			text-align: center;
+			margin:0px;
+			padding-bottom:50px;
+			@media(max-width:$screen-sm){
+		        text-align: left;
+			    margin: 0px;
+			    padding-left: 23px;
+			    padding-bottom: 25px;
+			    font-size: 15px;
+			    text-transform: uppercase;
+			    font-weight: bold;
+			}
+		}
+		a{
+			color:#fff;
+			text-decoration: none;
+			.ticket{
+				@media(max-width: $screen-sm){
+				    color: #fff;
+				    text-align: left;
+				    font-family: "Roboto Condensed",sans-serif;
+				    border-top: 1px solid #e68483;
+				    border-right: 0px;
+				    padding: 0px;
+				}
+				color:#fff;
+				text-align: center;
+				font-family: $font-base;
+			    border-right: 1px solid #e68483;
+				padding:0px;
+
+				.ticket-inner{
+				    margin: 0px 5px 0px 5px;
+	    			padding: 25px;
+	    			border-radius:6px;
+	    			transition: 0.2s;
+	    			@media(max-width:$screen-sm){
+	    				padding: 15px 23px 15px 23px;
+	    			}
+				}
+
+				.ticket-type{
+					@media(max-width:$screen-sm){
+	    				padding-bottom:0px;
+	    				font-size: 16px;
+	    			}
+					font-weight: bold;
+					padding-bottom:28px;
+					margin:0px;
+				}
+
+				p{
+					@media(max-width:$screen-sm){
+	    				display: inline-block;
+	    			}
+					margin:0px;
+				}
+
+				.price{
+					font-weight: bold;
+					margin-top:0px;
+				    margin-bottom: 30px;
+				    @media(max-width:$screen-sm){
+						display: inline-block;
+						font-size: 12px;
+						margin: 0px;
+	    			}
+
+				}
+
+				i{
+					@media(max-width:$screen-sm){
+					    float: right;
+					    font-size: 20px;
+					    position: absolute;
+					    right: 23px;
+					    transform: translateY(-50%);
+	    			}
+					font-size:30px;
+				}
+
+				&:last-of-type{
+					@media(max-width:$screen-sm){
+					    border-top:1px solid #e68483;
+					    border-bottom:1px solid #e68483;
+	    			}
+					border:0px;
+				}
+
+				&:hover{
+					.ticket-inner{
+						background-color:#e47272;
+					}
+				}
+
+			}
+		}
+		.btn-buy{
+			@media (max-width:$screen-sm){
+				margin-top: 30px;
+			    margin-bottom: 50px;
+			    padding: 15px 25px 15px 25px;
+		        font-size: 15px;
+			}
+			margin-top:30px;
+			padding: 20px 30px 20px 30px;
+			background-color:#ee7071;
+			color:#fff;
+			font-family: $font-base;
+			font-weight: bold;
+			font-size: 18px;
+			border:none;
+			transition:0.2s;
+			i{
+				@media (max-width:$screen-sm){
+					font-size: 18px;
+				}
+				font-size: 28px;
+				padding-left: 10px;
+			}
+			&:hover{
+				color:#000;
+				background-color: #FFF;
+			}
+		}
+    }
+}
+/* BUY TICKETS */
+
+/* FOOTER AND ORGANIZER */
+footer{
+	div.container-fluid{
+		max-width:1200px;
+		margin:auto;
+		.girls{
+		    width: 250px;
+		    height: 329px;
+		    position: absolute;
+		    top: -50px;
+		    background-size: contain;
+		    background-repeat: no-repeat;
+		    box-shadow: 0px 0px 70px -20px #2d2d2d;
+		    @media (max-width:$screen-sm){
+	    	    position: relative;
+    			margin: auto;
+		    }
+		}
+		.share-links-mobile{
+			display:none;
+			@media (max-width:$screen-sm){
+		  		display:block;
+		    }
+	  		text-align: center;
+			font-weight: bolder;
+		    font-size: 16px;
+		    max-width:1200px;
+		    margin:auto;
+		    a{
+			    font-size: 24px;
+		    	color:#d9524c;
+		    	padding-left:5px;
+		    	text-decoration: none;
+		    }
+		}
+		.long-desc{
+			padding-top:50px;
+			font-size: 16px;
+		}
+	}
+	.share-links{
+		@media (max-width:$screen-sm){
+	  		display:none;
+	    }
+	    font-size: 16px;
+	    position:relative;
+	    padding-top: 50px;
+	    max-width:1200px;
+	    margin:auto;
+	    a{
+		    font-size: 24px;
+	    	color:#d9524c;
+	    	padding-left:5px;
+	    	text-decoration: none;
+	    }
+	}
+	.horizontal{
+		border-top:1px solid black;
+		margin-top:30px;
+		margin-bottom: 30px;
+		max-width:384px;
+		@media (max-width:$screen-sm){
+	  		display:none;
+	    }
+	}
+	.organizer{
+		@media (max-width:$screen-sm){
+	  		padding-top:40px;
+	  		padding-bottom:50px;
+	    }
+		max-width: 1200px;
+		margin:auto;
+		padding:0px;
+		padding-bottom:70px;
+		font-family: $font-base;
+		font-weight: bold;
+		ul{
+			margin:0px;
+			padding:0px;
+			li{
+				display:inline-block;
+				 a{
+				    font-size: 24px;
+			    	color:#d9524c;
+			    	padding-left:5px;
+			    	text-decoration: none;
+			    }
+			}
+		}
+	}
+}
+/* FOOTER AND ORGANIZER */
