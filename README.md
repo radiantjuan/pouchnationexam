@@ -9,23 +9,19 @@ Preferred to be uploaded in a apache server with virtual host instead of using b
 
 please use this configuration for the vhost:
 
-    Markup :  `code()`
-
 ```vhost
     <VirtualHost *:80>
 		ServerAdmin admin@tomatocake.com
-		DocumentRoot "/var/www/html/clothesbuffetmanila/app"
-		ServerName clothesbuffetmanila.dev
-		ServerAlias clothesbuffetmanila.dev
-		ErrorLog "/var/log/apache2/clothesbuffetmanila.dev-error.log"
-		CustomLog "/var/log/apache2/clothesbuffetmanila.dev-access.log" common
+		DocumentRoot "/path/to/your/app"
+		ServerName $DOMAIN_NAME
+		ServerAlias $DOMAIN_NAME
+		ErrorLog "/var/log/apache2/$DOMAIN_NAME-error.log"
+		CustomLog "/var/log/apache2/$DOMAIN_NAME-access.log" common
 
 		SetEnv APP_ENV default
-		<Directory "/var/www/html/clothesbuffetmanila/app">
+		<Directory "/path/to/your/app">
 		    AllowOverride All
 		    Require all granted
 		</Directory>
 	</VirtualHost>
 ```
-
-    Markup : ```vhost
